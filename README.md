@@ -1,7 +1,7 @@
 ![]()
 
 # Tech Fest Website
-This project is a simple and interactive website designed for a tech fest. It showcases the events, schedules, and other important information about the fest. The website is built using HTML, CSS, and JavaScript, with animations powered by the GreenSock Animation Platform (GSAP). This project is awesome because it provides a visually appealing and user-friendly interface for attendees to explore the tech fest.
+This project is a simple and interactive website designed for a tech fest. It showcases the events, schedules, and other important information about the fest. The website is built using HTML, CSS, and JavaScript, with animations powered by the GreenSock Animation Platform (GSAP). This project is awesome because it provides a visually appealing and user-friendly interface for attendees to explore the tech fes
 
 ## Team members
 1. [Alwin Emmanuel](https://github.com/Alwin42)
