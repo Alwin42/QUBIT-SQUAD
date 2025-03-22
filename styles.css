@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('Images/background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-attachment: fixed; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.navbar a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    
+    color: rgb(179, 1, 255);
+}
+.navbar h2{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    margin-left: 20px;
+}
+.container1 h1
+{
+    text-align: center;
+    color: aliceblue;
+    margin: 250px;
+    font-size: 60px;
+}
+.container1 h2
+{
+        color: aliceblue;
+        text-align: center;
+        font-size: 20px;
+        margin: 40px;
+}
