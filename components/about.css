@@ -8,6 +8,25 @@ body {
     line-height: 1.6;
 }
 
+.navbar {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.navbar a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    
+    color: rgb(179, 1, 255);
+}
 header {
     background: linear-gradient(135deg, #8a2be2, #6a1b9a); 
     color: white;
