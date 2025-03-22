@@ -17,6 +17,8 @@ This project is a simple and interactive website designed for a tech fest. It sh
 3. The website is responsive, ensuring it looks great on all devices.
 
 ![Demo Video](Link Here) 
+## Project Link
+(https://qubit-squad.vercel.app)
 
 ## Libraries used
 - GSAP (GreenSock Animation Platform) -  3.12.7
