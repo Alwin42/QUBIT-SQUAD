@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About CyberForge - AISAT College Tech Fest</title>
     <link rel="stylesheet" href="about.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <div class="navbar">
-        <h2>CyberForge</h2>
+        <h2 class="nav-title">CyberForge</h2>
         <a href="../index.html">HOME</a>
         <a href="/components/about.html">ABOUT</a>
         <a href="/components/Events.html">EVENTS</a>
@@ -16,14 +18,14 @@
         <a href="Contact.html">CONTACT</a>
     </div>
     <header>
-        <h1>CyberForge</h1>
-        <p>Tech Fest by Qubit-Squad & CSE Department, AISAT College</p>
+        <h1 class="header-title">CyberForge</h1>
+        <p class="header-subtitle">Tech Fest by Qubit-Squad & CSE Department, AISAT College</p>
     </header>
 
     <div class="container">
         <section class="about-section">
-            <h2>About CyberForge</h2>
-            <p>
+            <h2 class="section-title">About CyberForge</h2>
+            <p class="section-text">
                 CyberForge is the annual tech fest organized by the <strong>Qubit-Squad</strong> and the <strong>Computer Science and Engineering (CSE) Department</strong> of AISAT College. 
                 It is a platform for students to showcase their technical skills, creativity, and innovation. The fest features a wide range of events, workshops, and competitions 
                 designed to inspire and challenge participants.
@@ -31,7 +33,7 @@
         </section>
 
         <section class="events-section">
-            <h2>Events and Activities</h2>
+            <h2 class="section-title">Events and Activities</h2>
             <ul class="event-list">
                 <li><strong>Workshops:</strong> Hands-on sessions on cutting-edge technologies like AI, ML, IoT, and more.</li>
                 <li><strong>Hackathons:</strong> Code, collaborate, and create innovative solutions to real-world problems.</li>
@@ -42,68 +44,108 @@
         </section>
 
         <section class="organizers-section">
-            <h2>Organized By</h2>
-            <p>
+            <h2 class="section-title">Organized By</h2>
+            <p class="section-text">
                 CyberForge is proudly organized by the <strong>Qubit-Squad</strong>, a student-led tech community, and the <strong>CSE Department</strong> of AISAT College. 
                 The team is dedicated to fostering a culture of innovation and learning among students.
             </p>
         </section>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        function splitText(element) {
+            const text = element.textContent;
+            element.innerHTML = text.split('').map(char => 
+                `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`
+            ).join('');
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Navbar animation
-            gsap.from(".navbar", {
-                y: -100,
+            splitText(document.querySelector('.header-title'));
+
+            // Navbar animations
+            gsap.from(".nav-title", {
                 opacity: 0,
+                x: -50,
                 duration: 1,
                 ease: "power3.out"
             });
-
-            // Header animation
-            gsap.from("header h1", {
-                y: 50,
+            gsap.from(".navbar a", {
                 opacity: 0,
+                y: -30,
+                stagger: 0.1,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+
+            // Header animations
+            gsap.from(".header-title .char", {
+                opacity: 0,
+                y: 20,
+                rotation: 15,
+                duration: 0.8,
+                stagger: 0.03,
+                ease: "back.out(1.7)"
+            });
+            gsap.from(".header-subtitle", {
+                opacity: 0,
+                scale: 0.8,
                 duration: 1,
                 delay: 0.5,
-                ease: "power3.out"
-            });
-            gsap.from("header p", {
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                delay: 0.8,
-                ease: "power3.out"
+                ease: "elastic.out(1, 0.8)"
             });
 
-            // Container sections animation
-            gsap.from(".container section", {
-                y: 50,
+            // Section title animations
+            document.querySelectorAll('.section-title').forEach(title => {
+                splitText(title);
+                gsap.from(title.querySelectorAll('.char'), {
+                    opacity: 0,
+                    duration: 0.03,
+                    stagger: 0.05,
+                    ease: "power1.in",
+                    scrollTrigger: {
+                        trigger: title,
+                        start: "top 80%"
+                    }
+                });
+            });
+
+            // Section text animations
+            gsap.from(".section-text", {
                 opacity: 0,
+                y: 30,
                 duration: 1,
-                stagger: 0.3,
-                ease: "power3.out",
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: ".container",
-                    start: "top 80%"
+                    trigger: ".section-text",
+                    start: "top 85%"
                 }
             });
 
-            // Event list items animation with alternating sides
+            // Event list items
             gsap.from(".event-list li", {
                 opacity: 0,
+                y: 50,
                 duration: 0.8,
                 stagger: 0.2,
-                ease: "power3.out",
-                x: (index) => index % 2 === 0 ? -50 : 50, 
+                ease: "bounce.out",
                 scrollTrigger: {
                     trigger: ".events-section",
                     start: "top 80%"
                 }
             });
+
+            gsap.to(".section-text strong, .event-list strong", {
+                scale: 1.1,
+                duration: 0.5,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut",
+                stagger: 0.2
+            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'924c4cef8ec853b7',t:'MTc0MjcxNTgzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
