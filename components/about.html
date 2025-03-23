@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="navbar">
-        <h2>CyberForge</h1>
+        <h2>CyberForge</h2>
         <a href="../index.html">HOME</a>
         <a href="/components/about.html">ABOUT</a>
         <a href="/components/Events.html">EVENTS</a>
@@ -49,5 +49,61 @@
             </p>
         </section>
     </div>
-</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar animation
+            gsap.from(".navbar", {
+                y: -100,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            // Header animation
+            gsap.from("header h1", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.5,
+                ease: "power3.out"
+            });
+            gsap.from("header p", {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                delay: 0.8,
+                ease: "power3.out"
+            });
+
+            // Container sections animation
+            gsap.from(".container section", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.3,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".container",
+                    start: "top 80%"
+                }
+            });
+
+            // Event list items animation with alternating sides
+            gsap.from(".event-list li", {
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out",
+                x: (index) => index % 2 === 0 ? -50 : 50, // Even indices from left (-50), odd from right (50)
+                scrollTrigger: {
+                    trigger: ".events-section",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'924c4cef8ec853b7',t:'MTc0MjcxNTgzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
