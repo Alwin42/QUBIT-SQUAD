@@ -1,13 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url('assets/background.jpg');
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; 
-    background-attachment: fixed; 
+    background-position: center;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Added to match GSAP example */
+    overflow: hidden;
 }
 
 .navbar {
@@ -17,6 +17,8 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar a {
@@ -31,7 +33,7 @@ body {
     color: rgb(179, 1, 255);
 }
 
-.navbar h2 {
+.navbar .nav-title {
     color: rgb(255, 255, 255);
     text-align: left;
     margin-left: 20px;
@@ -79,23 +81,28 @@ body {
     backface-visibility: hidden;
     overflow: hidden;
 }
-.container2
-{
+
+.container2 {
     display: flex;
     justify-content: flex-end;
     align-items: right;
     padding-right: 40px;
     margin-top: 60px;
 }
-.container2 h2{
+
+.container2 .main-title {
     color: rgb(241, 241, 241);
     text-align: center;
     font-size: 40px;
-    text-shadow: 0 0 10px rgba(223, 16, 65, 0.7), 
+    text-shadow: 0 0 10px rgba(223, 16, 65, 0.7),
                  0 0 20px rgba(223, 16, 65, 0.7),
                  0 0 30px rgba(223, 16, 65, 0.7),
                  0 0 40px rgba(223, 16, 65, 0.7),
                  0 0 50px rgba(223, 16, 65, 0.7),
                  0 0 60px rgba(223, 16, 65, 0.7),
                  0 0 70px rgba(223, 16, 65, 0.7);
+}
+
+.char {
+    display: inline-block;
 }
