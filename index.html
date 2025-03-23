@@ -36,9 +36,8 @@
     </section>
 
     <script>
-        // Navbar and text animations
         document.addEventListener('DOMContentLoaded', () => {
-            // Split main title into characters
+
             const mainTitle = document.querySelector('.main-title');
             mainTitle.innerHTML = mainTitle.textContent.split('').map(char => 
                 `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`
@@ -61,7 +60,7 @@
                 delay: 0.3
             });
 
-            // Main title animation (typewriter effect with bounce)
+
             gsap.from('.main-title .char', {
                 opacity: 0,
                 y: 20,
@@ -71,7 +70,7 @@
                 delay: 0.5
             });
 
-            // Add glow pulse effect to main title
+
             gsap.to('.main-title', {
                 textShadow: '0 0 20px rgba(223, 16, 65, 1), 0 0 30px rgba(223, 16, 65, 0.8), 0 0 40px rgba(223, 16, 65, 0.6)',
                 duration: 1.5,
@@ -81,7 +80,7 @@
             });
         });
 
-        // Existing cube animations
+
         const n = 25;
         const rots = [
             { ry: 270, rx: 0, a: 0.6 },
