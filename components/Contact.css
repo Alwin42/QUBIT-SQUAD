@@ -13,6 +13,8 @@ body {
     align-items: center;
     padding: 0;
     margin: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar a {
@@ -42,7 +44,7 @@ body {
     text-align: center;
 }
 
-.contact-container h1 {
+.contact-title {
     color: rgb(241, 241, 241);
     font-size: 40px;
     text-shadow: 0 0 10px rgba(223, 16, 65, 0.7),
@@ -53,6 +55,10 @@ body {
                  0 0 60px rgba(223, 16, 65, 0.7),
                  0 0 70px rgba(223, 16, 65, 0.7);
     margin-bottom: 40px;
+}
+
+.letter {
+    display: inline-block;
 }
 
 .contact-info {
