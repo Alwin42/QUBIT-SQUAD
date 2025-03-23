@@ -17,6 +17,8 @@ This project is a simple and interactive website designed for a tech fest. It sh
 3. The website is responsive, ensuring it looks great on all devices.
 
 ![Demo Video](Link Here) 
+## Project Link
+[LINK](https://qubit-squad.vercel.app)
 
 ## Libraries used
 - GSAP (GreenSock Animation Platform) -  3.12.7
@@ -29,14 +31,3 @@ This project is a simple and interactive website designed for a tech fest. It sh
    * Clone the repository to your local machine.
    ```
    git clone https://github.com/your-username/tech-fest-website.git
-   ```
-   * Alternatively, download the files as a ZIP archive and extract them to a folder on your computer.
-2. Navigate to the Project Folder
-   * Open your terminal or file explorer and go to the directory containing the website files. For example:
-   ```
-   cd path/to/repository-name
-   ```
-   * Ensure the folder contains at least an index.html file (the main entry point) and any associated CSS files (e.g., styles.css).
-3. Open the Website Locally
-   * Double-click the index.html file to open it in your default web browser, or drag it into a browser window.
-   * Alternatively, use a terminal command to open it (e.g., on macOS: open index.html, on Windows: start index.html).
