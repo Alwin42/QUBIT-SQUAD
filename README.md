@@ -9,7 +9,7 @@ This project is a simple and interactive website designed for a tech fest. It sh
 3. [Allen Jude](https://github.com/SR-005)
 
 ## Link to product walkthrough
-[Watch the demo video](Link Here)
+[Watch the demo video]([Link Here](https://drive.google.com/file/d/1Zp4QquyAoApGTkLSdjnf9jvMWlnTf3B7/view?usp=sharing))
 
 ## How it Works ?
 1. The website is built using HTML for structure, CSS for styling, and JavaScript for interactivity.
